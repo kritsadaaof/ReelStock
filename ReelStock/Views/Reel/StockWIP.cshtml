@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Stock";
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+            <h3 class="mb-1 text-center">รายการล้อ WIP</h3>
+            <h6 class="text-center" style="color:red"><i>รายการล้อทั้งหมด (จำนวน,Location)</i></h6>
+            <div class="col-xl-12 col-lg-6">
+                <div class="data-table-list">
+
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ลำดับ</th>
+                                    <th>บาร์โค้ด</th>
+                                    <th>ล้อขนาด</th>
+                                    <th>Location</th>
+                                    <th>Lot วันที่</th>
+                                    <th>จำนวน</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="font-size:12px">
+                                    <th>1</th>
+                                    <th style="color:darkblue">คลิ๊ก..ดูรายการ</th>
+                                    <th>ล้อเหล็ก xxx-01</th>
+                                    <th style="color:darkblue">คลิ๊ก..ดูLocation</th>
+                                    <th>09-03-2021</th>
+                                    <th>20</th>
+                                </tr>
+                                <tr style="font-size:12px">
+                                    <th>3</th>
+                                    <th style="color:darkblue">คลิ๊ก..ดูรายการ</th>
+                                    <th>ล้อเหล็ก xxx-02</th>
+                                    <th><a style="color:darkblue" href="../Reel/Reel_Location">คลิ๊ก..ดูLocation</a></th>
+                                    <th>25-02-2021</th>
+                                    <th>11</th>
+                                </tr>
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ลำดับ</th>
+                                    <th>บาร์โค้ด</th>
+                                    <th>ล้อขนาด</th>
+                                    <th>Location</th>
+                                    <th>Lot วันที่</th>
+                                    <th>จำนวน</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Reel_StockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Master_Location">
+          <Key>
+            <PropertyRef Name="Lo_ID" />
+          </Key>
+          <Property Name="Lo_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Lo_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Lo_Des" Type="varchar" MaxLength="50" />
+          <Property Name="Lo_Code" Type="varchar" MaxLength="10" />
+          <Property Name="Lo_Status" Type="varchar" MaxLength="10" />
+          <Property Name="Lo_Check" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Master_Member">
+          <Key>
+            <PropertyRef Name="Mem_ID" />
+          </Key>
+          <Property Name="Mem_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mem_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mem_User" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mem_Pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mem_Des" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mem_Status" Type="nvarchar" MaxLength="10" />
+          <Property Name="Create_By" Type="nvarchar" MaxLength="10" />
+          <Property Name="Create_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Update_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code_Mem" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mem_authorization1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mem_authorization2" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mem_authorization3" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mem_Function" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Master_Reel_Bom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Reel_Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Drum_High" Type="float" />
+          <Property Name="Drum_Length" Type="float" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Q_Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Thickness" Type="float" />
+          <Property Name="Reel_Weight" Type="float" />
+          <Property Name="Lag_Reel" Type="float" />
+          <Property Name="Status" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Reel_TR_MoveLocation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Move_Barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Move_User" Type="nvarchar" MaxLength="50" />
+          <Property Name="Move_Date" Type="datetime2" Precision="6" />
+          <Property Name="Move_Status" Type="nvarchar" MaxLength="10" />
+          <Property Name="Move_Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="Move_Alert" Type="nvarchar" MaxLength="10" />
+          <Property Name="Move_Size" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Reel_TR_RegisReel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Reel_Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reel_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reel_DateCreate" Type="datetime2" Precision="7" />
+          <Property Name="Reel_Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="Reel_Status" Type="nvarchar" MaxLength="10" />
+          <Property Name="Reel_User" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="Reel_StockModelStoreContainer">
+          <EntitySet Name="Master_Location" EntityType="Self.Master_Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Member" EntityType="Self.Master_Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Reel_Bom" EntityType="Self.Master_Reel_Bom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reel_TR_MoveLocation" EntityType="Self.Reel_TR_MoveLocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reel_TR_RegisReel" EntityType="Self.Reel_TR_RegisReel" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Reel_StockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Master_Reel_Bom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Reel_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Drum_High" Type="Double" />
+          <Property Name="Drum_Length" Type="Double" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Q_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness" Type="Double" />
+          <Property Name="Reel_Weight" Type="Double" />
+          <Property Name="Lag_Reel" Type="Double" />
+          <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Reel_StockEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Master_Reel_Bom" EntityType="Self.Master_Reel_Bom" />
+          <EntitySet Name="Reel_TR_RegisReel" EntityType="Reel_StockModel.Reel_TR_RegisReel" />
+          <EntitySet Name="Master_Member" EntityType="Reel_StockModel.Master_Member" />
+          <EntitySet Name="Master_Location" EntityType="Reel_StockModel.Master_Location" />
+          <EntitySet Name="Reel_TR_MoveLocation" EntityType="Reel_StockModel.Reel_TR_MoveLocation" />
+        </EntityContainer>
+        <EntityType Name="Reel_TR_RegisReel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Reel_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reel_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reel_DateCreate" Type="DateTime" Precision="7" />
+          <Property Name="Reel_Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Reel_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Reel_User" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Master_Member">
+          <Key>
+            <PropertyRef Name="Mem_ID" />
+          </Key>
+          <Property Name="Mem_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mem_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_Des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Create_By" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Create_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Update_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Code_Mem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_authorization1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_authorization2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_authorization3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mem_Function" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Master_Location">
+          <Key>
+            <PropertyRef Name="Lo_ID" />
+          </Key>
+          <Property Name="Lo_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Lo_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lo_Des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lo_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Lo_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Lo_Check" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Reel_TR_MoveLocation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Move_Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Move_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Move_Date" Type="DateTime" Precision="6" />
+          <Property Name="Move_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Move_Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Move_Alert" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Move_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Reel_StockModelStoreContainer" CdmEntityContainer="Reel_StockEntities">
+          <EntitySetMapping Name="Master_Reel_Bom">
+            <EntityTypeMapping TypeName="Reel_StockModel.Master_Reel_Bom">
+              <MappingFragment StoreEntitySet="Master_Reel_Bom">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Reel_Size" ColumnName="Reel_Size" />
+                <ScalarProperty Name="Drum_High" ColumnName="Drum_High" />
+                <ScalarProperty Name="Drum_Length" ColumnName="Drum_Length" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Q_Unit" ColumnName="Q_Unit" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Reel_Weight" ColumnName="Reel_Weight" />
+                <ScalarProperty Name="Lag_Reel" ColumnName="Lag_Reel" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reel_TR_RegisReel">
+            <EntityTypeMapping TypeName="Reel_StockModel.Reel_TR_RegisReel">
+              <MappingFragment StoreEntitySet="Reel_TR_RegisReel">
+                <ScalarProperty Name="Reel_User" ColumnName="Reel_User" />
+                <ScalarProperty Name="Reel_Status" ColumnName="Reel_Status" />
+                <ScalarProperty Name="Reel_Location" ColumnName="Reel_Location" />
+                <ScalarProperty Name="Reel_DateCreate" ColumnName="Reel_DateCreate" />
+                <ScalarProperty Name="Reel_Code" ColumnName="Reel_Code" />
+                <ScalarProperty Name="Reel_Size" ColumnName="Reel_Size" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Member">
+            <EntityTypeMapping TypeName="Reel_StockModel.Master_Member">
+              <MappingFragment StoreEntitySet="Master_Member">
+                <ScalarProperty Name="Mem_Function" ColumnName="Mem_Function" />
+                <ScalarProperty Name="Mem_authorization3" ColumnName="Mem_authorization3" />
+                <ScalarProperty Name="Mem_authorization2" ColumnName="Mem_authorization2" />
+                <ScalarProperty Name="Mem_authorization1" ColumnName="Mem_authorization1" />
+                <ScalarProperty Name="Code_Mem" ColumnName="Code_Mem" />
+                <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+                <ScalarProperty Name="Mem_Status" ColumnName="Mem_Status" />
+                <ScalarProperty Name="Mem_Des" ColumnName="Mem_Des" />
+                <ScalarProperty Name="Mem_Pass" ColumnName="Mem_Pass" />
+                <ScalarProperty Name="Mem_User" ColumnName="Mem_User" />
+                <ScalarProperty Name="Mem_Name" ColumnName="Mem_Name" />
+                <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Location">
+            <EntityTypeMapping TypeName="Reel_StockModel.Master_Location">
+              <MappingFragment StoreEntitySet="Master_Location">
+                <ScalarProperty Name="Lo_Check" ColumnName="Lo_Check" />
+                <ScalarProperty Name="Lo_Status" ColumnName="Lo_Status" />
+                <ScalarProperty Name="Lo_Code" ColumnName="Lo_Code" />
+                <ScalarProperty Name="Lo_Des" ColumnName="Lo_Des" />
+                <ScalarProperty Name="Lo_Name" ColumnName="Lo_Name" />
+                <ScalarProperty Name="Lo_ID" ColumnName="Lo_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reel_TR_MoveLocation">
+            <EntityTypeMapping TypeName="Reel_StockModel.Reel_TR_MoveLocation">
+              <MappingFragment StoreEntitySet="Reel_TR_MoveLocation">
+                <ScalarProperty Name="Move_Size" ColumnName="Move_Size" />
+                <ScalarProperty Name="Move_Alert" ColumnName="Move_Alert" />
+                <ScalarProperty Name="Move_Location" ColumnName="Move_Location" />
+                <ScalarProperty Name="Move_Status" ColumnName="Move_Status" />
+                <ScalarProperty Name="Move_Date" ColumnName="Move_Date" />
+                <ScalarProperty Name="Move_User" ColumnName="Move_User" />
+                <ScalarProperty Name="Move_Barcode" ColumnName="Move_Barcode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

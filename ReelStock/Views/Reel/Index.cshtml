@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "FORM";
+}
+
+<!--<div class="container" style="font-family: 'Barlow Condensed'"> -->
+@Scripts.Render("~/ReelIndex/js")
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+            <h3 class="mb-1 text-center">ลงทะเบียนล้อ</h3>
+            <h6 class="text-center" style="color:red"><i>ลงทะเบียนพร้อมปริ้นบาร์โค้ด</i></h6>
+
+
+            <div class="row">
+
+                <div class="col-lg-1">
+                </div>
+                <div class="row col-xl-12 col-lg-10">
+
+                    <div class="col-xl-3">
+                        </div>
+                        <div class="col-xl-2 col-lg-4">
+                            <i style="font-size:16px">ขนาดล้อที่ลงทะเบียน</i>
+                            <div class="input-group-icon">
+                                <!--div class="icon"><i class="fa fa-location-arrow" aria-hidden="true"></i></div-->
+                                <div class="form-select" id="default-select">
+                                    <select id="Reel_Size">
+                                        @foreach (var ReelSize in ViewBag.ReelSize)
+                                        {
+                                            <option value="@ReelSize.Reel_Size">@ReelSize.Reel_Size</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-4">
+                            <i style="font-size:16px">จำนวนล้อที่ผลิต</i>
+                            <input id="QTY_Reel" type="text" name="last_name" placeholder="กรอกจำนวน" class="single-input" onkeyup="this.value=this.value.replace(/[^0-9,.]/g,'')" />
+                        </div>
+                        <div class="col-xl-2 col-lg-4">
+                            <i style="font-size:16px">ผู้บันทึก</i>
+                            <input id="User" type="text" name="last_name" placeholder="รหัสพนักงาน" class="single-input">
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-1">
+                    </div>
+                </div>
+            <div class="row mt-1">
+                <div class="col-xs-12 col-md-12" style="text-align:center">
+                    <button id="Cal" class="genric-btn primary radius">คำนวน</button>
+                    <button id="clear" class="genric-btn primary radius">ยกเลิก</button>
+                </div>
+
+            </div>
+            <div class="row mt-3">
+
+                <div class="col-xl-2 col-lg-2">
+                </div>
+
+                <div class="col-xl-8 col-lg-8">
+                    <div class="data-table-list">
+
+                        <div class="table-responsive">
+                            <table id="tab_logic" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th width="35%">ล้อขนาด</th>
+                                        <th>บาร์โค้ด</th>
+                                        <th>ปริ้นบาร์โค้ด</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th>ล้อขนาด</th>
+                                        <th>บาร์โค้ด</th>
+                                        <th>ปริ้นบาร์โค้ด</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--
+                                    <tbody id="BodyT" style="display:none">
+                                    <tr style="font-size:14px">
+                                        <th>1</th>
+                                        <th>60C</th>
+                                        <th><img src="../Reel/RenderBarcode?id=aaa)" width="80" height="20" /></th>
+                                        <th><a style="color:darkblue" target="_blank" href="../Reel/PrintViewToPdf?id=">คลิ๊ก</a></th>
+                                    </tr>
+                                    <tr style="font-size:14px">
+                                        <th>2</th>
+                                        <th>60C</th>
+                                        <th><img src="@Url.Action("RenderBarcode",new {id = "aaa" })" width="80" height="20" /></th>
+                                        <th><a style="color:darkblue" target="_blank" href="../Reel/PrintViewToPdf?id=">คลิ๊ก</a></th>
+                                    </tr>
+                                    <tr style="font-size:14px">
+                                        <th>3</th>
+                                        <th>60C</th>
+                                        <th><img src="@Url.Action("RenderBarcode",new {id = "aaa" })" width="80" height="20" /></th>
+                                        <th><a style="color:darkblue" target="_blank" href="../Reel/PrintViewToPdf?id=">คลิ๊ก</a></th>
+                                    </tr>
+                                    <tr style="font-size:14px">
+                                        <th>4</th>
+                                        <th>60C</th>
+                                        <th><img src="@Url.Action("RenderBarcode",new {id = "aaa" })" width="80" height="20" /></th>
+                                        <th><a style="color:darkblue" target="_blank" href="../Reel/PrintViewToPdf?id=">คลิ๊ก</a></th>
+                                    </tr>
+                                    <tr style="font-size:14px">
+                                        <th>5</th>
+                                        <th>60C</th>
+                                        <th><img src="@Url.Action("RenderBarcode",new {id = "aaa" })" width="80" height="20" /></th>
+                                        <th><a style="color:darkblue" target="_blank" href="../Reel/PrintViewToPdf?id=">คลิ๊ก</a></th>
+                                    </tr>
+                                </tbody>
+
+    -->

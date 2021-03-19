@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Reel_StockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Master_Reel_Bom">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reel_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Drum_High" Type="Double" />
+    <Property Name="Drum_Length" Type="Double" />
+    <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Q_Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thickness" Type="Double" />
+    <Property Name="Reel_Weight" Type="Double" />
+    <Property Name="Lag_Reel" Type="Double" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Reel_StockEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Master_Reel_Bom" EntityType="Self.Master_Reel_Bom" />
+    <EntitySet Name="Reel_TR_RegisReel" EntityType="Reel_StockModel.Reel_TR_RegisReel" />
+    <EntitySet Name="Master_Member" EntityType="Reel_StockModel.Master_Member" />
+    <EntitySet Name="Master_Location" EntityType="Reel_StockModel.Master_Location" />
+    <EntitySet Name="Reel_TR_MoveLocation" EntityType="Reel_StockModel.Reel_TR_MoveLocation" />
+  </EntityContainer>
+  <EntityType Name="Reel_TR_RegisReel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reel_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reel_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reel_DateCreate" Type="DateTime" Precision="7" />
+    <Property Name="Reel_Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Reel_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Reel_User" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Master_Member">
+    <Key>
+      <PropertyRef Name="Mem_ID" />
+    </Key>
+    <Property Name="Mem_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mem_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_Des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Create_By" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Create_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Update_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code_Mem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_authorization1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_authorization2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_authorization3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mem_Function" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Master_Location">
+    <Key>
+      <PropertyRef Name="Lo_ID" />
+    </Key>
+    <Property Name="Lo_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lo_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lo_Des" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lo_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Lo_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Lo_Check" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Reel_TR_MoveLocation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Move_Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Move_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Move_Date" Type="DateTime" Precision="6" />
+    <Property Name="Move_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Move_Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Move_Alert" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Move_Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

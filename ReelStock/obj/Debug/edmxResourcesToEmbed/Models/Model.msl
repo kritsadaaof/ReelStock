@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Reel_StockModelStoreContainer" CdmEntityContainer="Reel_StockEntities">
+    <EntitySetMapping Name="Master_Reel_Bom">
+      <EntityTypeMapping TypeName="Reel_StockModel.Master_Reel_Bom">
+        <MappingFragment StoreEntitySet="Master_Reel_Bom">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Reel_Size" ColumnName="Reel_Size" />
+          <ScalarProperty Name="Drum_High" ColumnName="Drum_High" />
+          <ScalarProperty Name="Drum_Length" ColumnName="Drum_Length" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Q_Unit" ColumnName="Q_Unit" />
+          <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+          <ScalarProperty Name="Reel_Weight" ColumnName="Reel_Weight" />
+          <ScalarProperty Name="Lag_Reel" ColumnName="Lag_Reel" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reel_TR_RegisReel">
+      <EntityTypeMapping TypeName="Reel_StockModel.Reel_TR_RegisReel">
+        <MappingFragment StoreEntitySet="Reel_TR_RegisReel">
+          <ScalarProperty Name="Reel_User" ColumnName="Reel_User" />
+          <ScalarProperty Name="Reel_Status" ColumnName="Reel_Status" />
+          <ScalarProperty Name="Reel_Location" ColumnName="Reel_Location" />
+          <ScalarProperty Name="Reel_DateCreate" ColumnName="Reel_DateCreate" />
+          <ScalarProperty Name="Reel_Code" ColumnName="Reel_Code" />
+          <ScalarProperty Name="Reel_Size" ColumnName="Reel_Size" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Member">
+      <EntityTypeMapping TypeName="Reel_StockModel.Master_Member">
+        <MappingFragment StoreEntitySet="Master_Member">
+          <ScalarProperty Name="Mem_Function" ColumnName="Mem_Function" />
+          <ScalarProperty Name="Mem_authorization3" ColumnName="Mem_authorization3" />
+          <ScalarProperty Name="Mem_authorization2" ColumnName="Mem_authorization2" />
+          <ScalarProperty Name="Mem_authorization1" ColumnName="Mem_authorization1" />
+          <ScalarProperty Name="Code_Mem" ColumnName="Code_Mem" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+          <ScalarProperty Name="Mem_Status" ColumnName="Mem_Status" />
+          <ScalarProperty Name="Mem_Des" ColumnName="Mem_Des" />
+          <ScalarProperty Name="Mem_Pass" ColumnName="Mem_Pass" />
+          <ScalarProperty Name="Mem_User" ColumnName="Mem_User" />
+          <ScalarProperty Name="Mem_Name" ColumnName="Mem_Name" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Location">
+      <EntityTypeMapping TypeName="Reel_StockModel.Master_Location">
+        <MappingFragment StoreEntitySet="Master_Location">
+          <ScalarProperty Name="Lo_Check" ColumnName="Lo_Check" />
+          <ScalarProperty Name="Lo_Status" ColumnName="Lo_Status" />
+          <ScalarProperty Name="Lo_Code" ColumnName="Lo_Code" />
+          <ScalarProperty Name="Lo_Des" ColumnName="Lo_Des" />
+          <ScalarProperty Name="Lo_Name" ColumnName="Lo_Name" />
+          <ScalarProperty Name="Lo_ID" ColumnName="Lo_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reel_TR_MoveLocation">
+      <EntityTypeMapping TypeName="Reel_StockModel.Reel_TR_MoveLocation">
+        <MappingFragment StoreEntitySet="Reel_TR_MoveLocation">
+          <ScalarProperty Name="Move_Size" ColumnName="Move_Size" />
+          <ScalarProperty Name="Move_Alert" ColumnName="Move_Alert" />
+          <ScalarProperty Name="Move_Location" ColumnName="Move_Location" />
+          <ScalarProperty Name="Move_Status" ColumnName="Move_Status" />
+          <ScalarProperty Name="Move_Date" ColumnName="Move_Date" />
+          <ScalarProperty Name="Move_User" ColumnName="Move_User" />
+          <ScalarProperty Name="Move_Barcode" ColumnName="Move_Barcode" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

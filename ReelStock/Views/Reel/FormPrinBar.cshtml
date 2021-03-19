@@ -1,0 +1,26 @@
+﻿@model ReelStock.Models.Reel_TR_RegisReel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FormPrinBar</title>
+</head>
+<body class="">
+    <table style="width:100%;" class="Form1">
+
+        <tr>
+            <td style="width:50%;text-align:center;">
+                <img src="@Url.Action("RenderBarcode",new {id = Html.DisplayFor(model => model.Reel_Code) })" width="600" height="80" />
+                <a style="font-size:34px"> Barcode : @Html.DisplayFor(model => model.Reel_Code) </a><br />
+                <a style="font-size:34px"> Type : @Html.DisplayFor(model => model.Reel_Size) </a><br />
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
